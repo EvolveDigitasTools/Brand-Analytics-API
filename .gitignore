@@ -1,6 +1,5 @@
 # Dependency directories
 node_modules/
-/dist/
 
 # Environment variables
 .env
@@ -27,6 +26,3 @@ Thumbs.db
 
 # Vue.js specific
 /public/
-
-# TypeScript compiled output
-/dist/
