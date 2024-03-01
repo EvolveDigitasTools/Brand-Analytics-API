@@ -12,6 +12,8 @@ const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
 dotenv.config({ path: envFile})
 
+
+app.use(express.json());
 // Mount a simple route
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');

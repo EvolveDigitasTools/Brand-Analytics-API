@@ -12,6 +12,7 @@ const app = (0, express_1.default)();
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
 dotenv_1.default.config({ path: envFile });
+app.use(express_1.default.json());
 // Mount a simple route
 app.get('/', (req, res) => {
     res.send('Hello World!');
