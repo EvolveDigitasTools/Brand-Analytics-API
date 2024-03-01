@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.newOrderShopify = void 0;
 const newOrderShopify = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log(req);
+        console.log(req.body);
         return res.send('new order request received');
     }
     catch (error) {

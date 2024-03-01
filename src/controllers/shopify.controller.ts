@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 
 export const newOrderShopify: RequestHandler = async (req, res) => {
     try {
-        console.log(req);
+        console.log(req.body);
         return res.send('new order request received')
         
     } catch (error: any) {
