@@ -12,8 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.newOrderShopify = void 0;
 const newOrderShopify = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log(req.body);
-        return res.send('new order request received');
+        const order = req.body;
+        // Process the order object
+        console.log(order);
+        // Respond to Shopify to acknowledge receipt of the webhook
+        res.status(200).end();
     }
     catch (error) {
         return res.status(504).json({
