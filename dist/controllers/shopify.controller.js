@@ -14,7 +14,7 @@ const newOrderShopify = (req, res) => __awaiter(void 0, void 0, void 0, function
     try {
         const order = req.body;
         // Process the order object
-        console.log(order);
+        console.log(Object.keys(order));
         // Respond to Shopify to acknowledge receipt of the webhook
         res.status(200).end();
     }

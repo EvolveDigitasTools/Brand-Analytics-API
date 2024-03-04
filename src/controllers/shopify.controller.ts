@@ -5,7 +5,7 @@ export const newOrderShopify: RequestHandler = async (req, res) => {
         const order = req.body;
 
         // Process the order object
-        console.log(order);
+        console.log(Object.keys(order));
 
         // Respond to Shopify to acknowledge receipt of the webhook
         res.status(200).end();
