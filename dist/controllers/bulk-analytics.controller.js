@@ -8,19 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-// import bulkAnalyticsRouter from './bulk-analytics.route';
-// import shopifyRouter from './shopify.route';
-const product_route_1 = __importDefault(require("./product.route"));
-const router = (0, express_1.Router)();
-router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.status(200).send("Api is working");
-}));
-// router.use("/bulk-analytics", bulkAnalyticsRouter);
-// router.use("/shopify-events", shopifyRouter);
-router.use("/product", product_route_1.default);
-exports.default = router;
+exports.getGMV = void 0;
+const getGMV = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { currency } = req.query;
+    }
+    catch (error) {
+        return res.status(504).json({
+            success: false,
+            message: error.message,
+            data: {
+                "source": "bulk-analytics.controller.js -> getGMV"
+            }
+        });
+    }
+});
+exports.getGMV = getGMV;

@@ -12,15 +12,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-// import bulkAnalyticsRouter from './bulk-analytics.route';
-// import shopifyRouter from './shopify.route';
-const product_route_1 = __importDefault(require("./product.route"));
-const router = (0, express_1.Router)();
-router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.status(200).send("Api is working");
-}));
-// router.use("/bulk-analytics", bulkAnalyticsRouter);
-// router.use("/shopify-events", shopifyRouter);
-router.use("/product", product_route_1.default);
-exports.default = router;
+exports.validateNewOrder = void 0;
+const joi_1 = __importDefault(require("joi"));
+const validateNewOrder = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const validateGetGMVQueryParams = joi_1.default.object({
+            currency: joi_1.default.string(),
+        });
+        yield validateGetGMVQueryParams.validateAsync(req.query);
+        next();
+    }
+    catch (error) {
+        return res.status(504).json({
+            success: false,
+            message: error.message,
+            data: []
+        });
+    }
+});
+exports.validateNewOrder = validateNewOrder;
