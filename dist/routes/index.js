@@ -18,7 +18,7 @@ const shopify_route_1 = __importDefault(require("./shopify.route"));
 const product_route_1 = __importDefault(require("./product.route"));
 const router = (0, express_1.Router)();
 router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.status(200).send("Api is working");
+    res.status(200).send(`Api is working - ${process.env.DB_NAME}`);
 }));
 // router.use("/bulk-analytics", bulkAnalyticsRouter);
 router.use("/shopify-events", shopify_route_1.default);
