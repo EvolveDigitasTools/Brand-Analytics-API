@@ -10,8 +10,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_typescript_1 = require("sequelize-typescript");
-const product_model_1 = __importDefault(require("./product.model"));
-let Brand = class Brand extends sequelize_typescript_1.Model {
+const order_model_1 = __importDefault(require("./order.model"));
+let Marketplace = class Marketplace extends sequelize_typescript_1.Model {
 };
 __decorate([
     sequelize_typescript_1.AutoIncrement,
@@ -19,20 +19,26 @@ __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.INTEGER,
     })
-], Brand.prototype, "id", void 0);
+], Marketplace.prototype, "id", void 0);
 __decorate([
     (0, sequelize_typescript_1.AllowNull)(false),
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING
     })
-], Brand.prototype, "name", void 0);
+], Marketplace.prototype, "name", void 0);
 __decorate([
-    (0, sequelize_typescript_1.HasMany)(() => product_model_1.default, { foreignKey: 'brandId', as: 'products' })
-], Brand.prototype, "products", void 0);
-Brand = __decorate([
+    (0, sequelize_typescript_1.HasMany)(() => order_model_1.default)
+], Marketplace.prototype, "orders", void 0);
+__decorate([
+    sequelize_typescript_1.CreatedAt
+], Marketplace.prototype, "createdAt", void 0);
+__decorate([
+    sequelize_typescript_1.UpdatedAt
+], Marketplace.prototype, "updatedAt", void 0);
+Marketplace = __decorate([
     (0, sequelize_typescript_1.Table)({
-        tableName: 'brands',
-        timestamps: false,
+        tableName: 'marketplaces',
+        timestamps: true
     })
-], Brand);
-exports.default = Brand;
+], Marketplace);
+exports.default = Marketplace;

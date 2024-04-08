@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.newProduct = void 0;
-const Product_1 = __importDefault(require("../models/Product"));
+const product_model_1 = __importDefault(require("../models/product.model"));
 const Brand_1 = __importDefault(require("../models/Brand"));
 const newProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -27,7 +27,7 @@ const newProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             brand = yield Brand_1.default.create({
                 name: brandName
             });
-        const product = yield Product_1.default.create({
+        const product = yield product_model_1.default.create({
             name,
             mrp,
             skuId,
