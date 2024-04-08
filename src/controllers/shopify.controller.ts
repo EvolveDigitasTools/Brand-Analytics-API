@@ -4,7 +4,7 @@ export const newOrderShopify: RequestHandler = async (req, res) => {
     try {
         const order = req.body;
 
-        console.log("called", order);
+        console.log("called", order)
 
         // Process the order object
         console.log(Object.keys(order));

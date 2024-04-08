@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_typescript_1 = require("sequelize-typescript");
 const mysql = __importStar(require("mysql2"));
 const Brand_1 = __importDefault(require("./Brand"));
-const product_model_1 = __importDefault(require("./product.model"));
+const Product_1 = __importDefault(require("./Product"));
 const dbName = process.env.DB_NAME || 'your_database_name';
 const dbUser = process.env.DB_USER || 'your_database_username';
 const dbHost = process.env.DB_HOST || 'localhost';
@@ -42,7 +42,7 @@ const sequelize = new sequelize_typescript_1.Sequelize({
     password: dbPassword,
     database: dbName,
     port: 3306,
-    models: [Brand_1.default, product_model_1.default]
+    models: [Brand_1.default, Product_1.default]
 });
 // sequelize.sync({ alter: true });  // Use cautiously
 exports.default = sequelize;

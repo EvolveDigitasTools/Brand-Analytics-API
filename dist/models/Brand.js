@@ -10,7 +10,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_typescript_1 = require("sequelize-typescript");
-const product_model_1 = __importDefault(require("./product.model"));
+const Product_1 = __importDefault(require("./Product"));
 let Brand = class Brand extends sequelize_typescript_1.Model {
 };
 __decorate([
@@ -27,7 +27,7 @@ __decorate([
     })
 ], Brand.prototype, "name", void 0);
 __decorate([
-    (0, sequelize_typescript_1.HasMany)(() => product_model_1.default, { foreignKey: 'brandId', as: 'products' })
+    (0, sequelize_typescript_1.HasMany)(() => Product_1.default, { foreignKey: 'brandId', as: 'products' })
 ], Brand.prototype, "products", void 0);
 Brand = __decorate([
     (0, sequelize_typescript_1.Table)({
