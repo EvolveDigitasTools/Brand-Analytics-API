@@ -14,13 +14,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 // import bulkAnalyticsRouter from './bulk-analytics.route';
-// import shopifyRouter from './shopify.route';
+const shopify_route_1 = __importDefault(require("./shopify.route"));
 const product_route_1 = __importDefault(require("./product.route"));
 const router = (0, express_1.Router)();
 router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(200).send("Api is working");
 }));
 // router.use("/bulk-analytics", bulkAnalyticsRouter);
-// router.use("/shopify-events", shopifyRouter);
+router.use("/shopify-events", shopify_route_1.default);
 router.use("/product", product_route_1.default);
 exports.default = router;
