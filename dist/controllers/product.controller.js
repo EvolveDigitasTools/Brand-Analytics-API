@@ -17,7 +17,6 @@ const Product_1 = __importDefault(require("../models/Product"));
 const Brand_1 = __importDefault(require("../models/Brand"));
 const newProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.time('newProduct function');
         const { name, mrp, skuId, brandName } = req.body;
         let brand = yield Brand_1.default.findOne({
             where: {
@@ -40,7 +39,6 @@ const newProduct = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
                 message: 'Product successfully created',
                 data: {}
             });
-        console.timeEnd('newProduct function');
         return res.status(400).json({
             success: false,
             message: 'Unable to add product, some error occured'

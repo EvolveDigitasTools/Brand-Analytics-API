@@ -13,9 +13,9 @@ exports.newOrderShopify = void 0;
 const newOrderShopify = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const order = req.body;
-        console.log("called", order);
+        // console.log("called", order)
         // Process the order object
-        console.log(Object.keys(order));
+        console.log("check order", Object.keys(order));
         // Respond to Shopify to acknowledge receipt of the webhook
         res.status(200).end();
     }

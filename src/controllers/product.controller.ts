@@ -4,7 +4,6 @@ import Brand from '../models/Brand';
 
 export const newProduct: RequestHandler = async (req, res) => {
     try {
-        console.time('newProduct function'); 
         const { name, mrp, skuId, brandName } = req.body;
         let brand = await Brand.findOne({
             where: {
@@ -26,10 +25,7 @@ export const newProduct: RequestHandler = async (req, res) => {
             success: true,
             message: 'Product successfully created',
             data: {}
-        })
-
-        console.timeEnd('newProduct function');
-        
+        })        
         return res.status(400).json({
             success: false,
             message: 'Unable to add product, some error occured'
