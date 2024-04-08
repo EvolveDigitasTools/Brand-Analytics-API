@@ -12,6 +12,6 @@ router.get("/", async (req, res) => {
 
 // router.use("/bulk-analytics", bulkAnalyticsRouter);
 router.use("/shopify-events", shopifyRouter);
-router.use("/product", productRouter)
+// router.use("/product", productRouter)
 
 export default router;

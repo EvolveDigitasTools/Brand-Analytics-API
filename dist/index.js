@@ -16,16 +16,16 @@ dotenv_1.default.config();
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
 dotenv_1.default.config({ path: envFile });
-const models_1 = __importDefault(require("./models"));
+// import connection from './models';
 const index_1 = __importDefault(require("./routes/index"));
 app.use(express_1.default.json());
 // Mount a simple route
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
-models_1.default.sync().then(() => {
-    console.log("Database synced successfully");
-});
+// connection.sync().then(() => {
+//     console.log("Database synced successfully");
+// });
 app.use('/api', index_1.default);
 // Start the express server
 app.listen(port, () => {

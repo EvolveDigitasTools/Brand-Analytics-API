@@ -15,12 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 // import bulkAnalyticsRouter from './bulk-analytics.route';
 const shopify_route_1 = __importDefault(require("./shopify.route"));
-const product_route_1 = __importDefault(require("./product.route"));
 const router = (0, express_1.Router)();
 router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.status(200).send(`Api is working - ${process.env.DB_NAME} - ${process.env.DB_USER} - ${process.env.DB_PASSWORD} - ${process.env.DB_HOST}`);
 }));
 // router.use("/bulk-analytics", bulkAnalyticsRouter);
 router.use("/shopify-events", shopify_route_1.default);
-router.use("/product", product_route_1.default);
+// router.use("/product", productRouter)
 exports.default = router;

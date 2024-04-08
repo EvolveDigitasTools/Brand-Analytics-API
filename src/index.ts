@@ -14,7 +14,7 @@ const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development';
 dotenv.config({ path: envFile })
 
-import connection from './models';
+// import connection from './models';
 import routes from './routes/index'
 
 
@@ -24,9 +24,9 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
 });
 
-connection.sync().then(() => {
-    console.log("Database synced successfully");
-});
+// connection.sync().then(() => {
+//     console.log("Database synced successfully");
+// });
 
 app.use('/api', routes)
 
