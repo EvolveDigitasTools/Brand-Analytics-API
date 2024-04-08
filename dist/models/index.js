@@ -44,5 +44,5 @@ const sequelize = new sequelize_typescript_1.Sequelize({
     port: 3306,
     models: [Brand_1.default, Product_1.default]
 });
-// sequelize.sync({ alter: true });  // Use cautiously
+sequelize.sync({ alter: true }); // Use cautiously
 exports.default = sequelize;

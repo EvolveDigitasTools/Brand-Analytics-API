@@ -19,6 +19,6 @@ const sequelize = new Sequelize({
   models: [Brand, Product]
 });
 
-// sequelize.sync({ alter: true });  // Use cautiously
+sequelize.sync({ alter: true });  // Use cautiously
 
 export default sequelize;
