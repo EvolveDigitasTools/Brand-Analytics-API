@@ -4,12 +4,11 @@ export const newOrderShopify: RequestHandler = async (req, res) => {
     try {
         const order = req.body;
 
-        // console.log("called", order)
-
-        // Process the order object
-        console.log("check order", Object.keys(order));
-
-        // Respond to Shopify to acknowledge receipt of the webhook
+        for (const key in order) {
+            if (order[key] !== null && order[key] !== undefined) {
+              console.log(key, order[key]); 
+            }
+          }
         res.status(200).end();
 
     } catch (error: any) {

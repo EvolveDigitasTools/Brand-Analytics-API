@@ -13,10 +13,11 @@ exports.newOrderShopify = void 0;
 const newOrderShopify = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const order = req.body;
-        // console.log("called", order)
-        // Process the order object
-        console.log("check order", Object.keys(order));
-        // Respond to Shopify to acknowledge receipt of the webhook
+        for (const key in order) {
+            if (order[key] !== null && order[key] !== undefined) {
+                console.log(key, order[key]);
+            }
+        }
         res.status(200).end();
     }
     catch (error) {
